@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="page-content-wrapper">
+    <div class="page-content">
+
+        <header class="content-header">
+            <span class="post-time">{{ post.post_date }}</span>
+            <h2>{{ post.post_title }}</h2>
+        </header>
+
+        <div class="content-body">
+            {% filter markdown %}
+            {{ post.post_content }}
+            {% endfilter %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
